@@ -1,0 +1,32 @@
+.contenedor {
+    padding: 3rem;
+    margin: 3rem;
+    background-color: aquamarine;
+    display: flex;
+    justify-content: space-around;
+}
+
+.foto {
+    padding: 0.5rem;
+    margin: 1rem;
+
+    width: auto;
+    height: auto;   
+    clip-path: polygon(25% 0%, 75% 0%, 100% 48%, 75% 100%, 25% 100%, 0% 50%);
+    background-color: brown;
+}
+
+.foto img {
+    clip-path: polygon(25% 0%, 75% 0%, 100% 48%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+.sobre-mi {
+    padding: 1rem 2rem 1rem 2rem;
+    margin: 1rem;
+    background-color: brown;
+}
+
+.sobre-mi p{
+    padding: 0.5rem;
+    margin: 0.5rem;
+}

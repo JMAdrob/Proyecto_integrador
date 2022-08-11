@@ -1,0 +1,81 @@
+.contenedor {
+    padding: 3rem;
+    margin: 3rem;
+    background-color: aquamarine;
+    display: flex;
+    justify-content: space-around;
+}
+
+.container {
+    position: relative;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.progress-circular {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: conic-gradient(orange 0deg, gray 0deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress-circular::after {
+    position: absolute;
+    content: "";
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+.value {
+    font-size: 60px;
+    font-weight: 600;
+    color: orange;
+    z-index: 9;
+}
+
+.text {
+    font-size: 25px;
+    font-weight: 600;
+    color: orange;
+    margin: 20px 0;
+}
+
+.btn {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+input {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border: 1px solid orange;
+    border-radius: 10px 10px 0 0;
+    outline: none;
+    text-align: center;
+    font-size: 60px;
+    font-weight: 600;
+    color: orange;
+}
+
+button {
+    background: orange;
+    border-radius: 0 0 10px 10px;
+    outline: none;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+}
+
+button:active {
+    color: #fff;
+}
