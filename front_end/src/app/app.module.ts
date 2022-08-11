@@ -7,6 +7,7 @@ import { AcercaDeMiComponent } from './components/acerca-de-mi/acerca-de-mi.comp
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 import { SkilsComponent } from './components/skils/skils.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { SkilsComponent } from './components/skils/skils.component';
     AcercaDeMiComponent,
     NavbarComponent,
     ExperienciaComponent,
-    SkilsComponent
+    SkilsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule

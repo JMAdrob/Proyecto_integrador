@@ -1,0 +1,18 @@
+img {
+    height: 4vh;
+}
+
+a {
+    padding: 1rem;
+}
+
+p {
+    padding: 1rem;
+}
+
+.contenedor {
+    height: 8vh;
+    background-color: burlywood;
+    display: flex;
+    align-items: center;
+}
