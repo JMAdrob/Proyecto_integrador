@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { datosPersonales } from 'src/app/module/datosPersonales.model';
+import { DatosPersonalesService } from 'src/app/service/datos-personales.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  DatosPersonales: datosPersonales = new datosPersonales("","");
+
+  constructor(public datosPersonalesService: DatosPersonalesService) { }
 
   ngOnInit(): void {
+    this.datosPersonalesService.getDatosPersonales().subscribe(data  => {this.DatosPersonales = data})
   }
 
 }
