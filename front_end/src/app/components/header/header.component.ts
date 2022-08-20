@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { datosPersonales } from 'src/app/module/datosPersonales.model';
+import { datosPersonales } from 'src/app/model/datosPersonales.model';
 import { DatosPersonalesService } from 'src/app/service/datos-personales.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-header',
@@ -9,12 +10,23 @@ import { DatosPersonalesService } from 'src/app/service/datos-personales.service
 })
 export class HeaderComponent implements OnInit {
 
-  DatosPersonales: datosPersonales = new datosPersonales("","");
+  public datosPersonales: datosPersonales | undefined;
+  public editarDatosPerosnales: datosPersonales | undefined;
 
-  constructor(public datosPersonalesService: DatosPersonalesService) { }
+  constructor(private datosPersonalesService: DatosPersonalesService) { }
 
   ngOnInit(): void {
-    this.datosPersonalesService.getDatosPersonales().subscribe(data  => {this.DatosPersonales = data})
+    this.getDatosPersonales();
   }
 
+  public getDatosPersonales():void{
+    this.datosPersonalesService.getDatosPersonales().subscribe({
+      next: (response: datosPersonales) =>{
+        this.datosPersonales = response;
+      },
+      error:(error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    })
+  }
 }

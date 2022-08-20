@@ -9,6 +9,9 @@ import { ExperienciaComponent } from './components/experiencia/experiencia.compo
 import { SkilsComponent } from './components/skils/skils.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
+import { EstudiosComponent } from './components/estudios/estudios.component';
 
 @NgModule({
   declarations: [
@@ -18,11 +21,14 @@ import { HttpClientModule } from '@angular/common/http';
     NavbarComponent,
     ExperienciaComponent,
     SkilsComponent,
-    FooterComponent
+    FooterComponent,
+    EstudiosComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
