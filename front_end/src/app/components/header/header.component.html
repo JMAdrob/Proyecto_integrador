@@ -1,5 +1,5 @@
 <header>
-  <div class="contenedor">
-    <h1 class="titulo">Juan Borda</h1>
+  <div class="contenedor" *ngIf='datosPersonales'>
+    <h1 class="titulo">{{datosPersonales.nombre}} {{datosPersonales.apellido}}</h1>
   </div>
 </header>

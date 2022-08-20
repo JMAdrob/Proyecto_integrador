@@ -1,6 +1,5 @@
-<section id="experiencia">
-  <h2>Experiencia</h2>
-
+<section id="estudios">
+  <h2>Estudios</h2>
   <div>
     <div class="text-center">
       <button
@@ -8,44 +7,40 @@
         class="btn btn-success"
         (click)="onOpenModal('add')"
         data-bs-toggle="modal"
-        data-bs-target="#addExperienciaModal"
+        data-bs-target="#addEstudiosModal"
       >
-        <a class="nav-link" style="color: #fff">Agregar Experiencia</a>
+        <a class="nav-link" style="color: #fff">Agregar Estudios</a>
       </button>
     </div>
   </div>
 
   <div class="contenedor row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-    <div
-      class="card"
-      style="width: 18rem"
-      *ngFor="let experiencia of experiencias"
-    >
-      <img src="{{ experiencia.imgExp }}" class="card-img-top" alt="..." />
+    <div class="card" style="width: 18rem" *ngFor="let estudio of estudios">
+      <img src="{{ estudio.imgEst }}" class="card-img-top" alt="..." />
       <div class="card-body">
-        <h5 class="card-title">{{ experiencia.nombreExp }}</h5>
-        <p class="card-text">{{ experiencia.descripcionExp }}</p>
+        <h5 class="card-title">{{ estudio.nombreEst }}</h5>
+        <p class="card-text">{{ estudio.descripcionEst }}</p>
       </div>
       <div class="d-flex justify-content-between align-items-center">
         <div class="btn-group">
           <button
-            (click)="onOpenModal('edit', experiencia)"
+            (click)="onOpenModal('edit', estudio)"
             data-original-title="Edit"
             type="button"
             class="btn btn-sm btn-outline-secondary"
             data-bs-toggle="modal"
-            data-bs-target="#updateExperienciaModal"
+            data-bs-target="#updateEstudiosModal"
           >
             Editar
           </button>
 
           <button
-            (click)="onOpenModal('delete', experiencia)"
+            (click)="onOpenModal('delete', estudio)"
             data-original-title="delete"
             type="button"
             class="btn btn-sm btn-outline-secondary"
             data-bs-toggle="modal"
-            data-bs-target="#deleteExperienciaModal"
+            data-bs-target="#deleteEstudiosModal"
           >
             Borrar
           </button>
@@ -58,16 +53,16 @@
 <!-- *************** Agregar ****************** -->
 <div
   class="modal fade"
-  id="addExperienciaModal"
+  id="addEstudiosModal"
   tabindex="-1"
   role="dialog"
-  aria-labelledby="addExperienciaModalLabel"
+  aria-labelledby="addEstudiosModalLabel"
   aria-hidden="true"
 >
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="addExperienciaModalLabel">Agregar Experiencia</h5>
+        <h5 class="modal-title" id="addEstudiosModalLabel">Agregar Estudios</h5>
         <button
           type="button"
           class="btn-close"
@@ -76,37 +71,37 @@
         ></button>
       </div>
       <div class="modal-body">
-        <form #addForm="ngForm" (ngSubmit)="onAddExperiencia(addForm)">
+        <form #addForm="ngForm" (ngSubmit)="onAddEstudios(addForm)">
           <div class="form-group">
-            <label for="nombreExp">Titulo</label>
+            <label for="nombreEst">Titulo</label>
             <input
-              id="nombreExp"
+              id="nombreEst"
               class="form-control"
               type="text"
               ngModel
-              name="nombreExp"
+              name="nombreEst"
               placeholder="Titulo"
               required
             />
 
-            <label for="descripcionExp">Descripcion</label>
+            <label for="descripcionEst">Descripcion</label>
             <input
-              id="descripcionExp"
+              id="descripcionEst"
               class="form-control"
               type="text"
               ngModel
-              name="descripcionExp"
+              name="descripcionEst"
               placeholder="Descripcion"
               required
             />
 
-            <label for="imgExp">Imagen</label>
+            <label for="imgEst">Imagen</label>
             <input
-              id="imgExp"
+              id="imgEst"
               class="form-control"
               type="text"
               ngModel
-              name="imgExp"
+              name="imgEst"
               placeholder="Imagen (URL)"
               required
             />
@@ -117,7 +112,7 @@
               [disabled]="addForm.invalid"
               type="submit"
               class="btn btn-primary"
-              id="add-experiencia-form"
+              id="add-estudios-form"
               data-bs-dismiss="modal"
             >
               Agregar
@@ -133,17 +128,17 @@
 
 <div
   class="modal fade"
-  id="updateExperienciaModal"
+  id="updateEstudiosModal"
   tabindex="-1"
   role="dialog"
-  aria-labelledby="updateExperienciaModalLabel"
+  aria-labelledby="updateEstudiosModalLabel"
   aria-hidden="true"
 >
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="updateExperienciaModalLabel">
-          Editar Experiencia
+        <h5 class="modal-title" id="updateEstudiosModalLabel">
+          Editar Estudios
         </h5>
         <button
           type="button"
@@ -155,43 +150,43 @@
       <div class="modal-body">
         <form #editForm="ngForm">
           <div class="form-group">
-            <label for="nombreExp">Titulo</label>
+            <label for="nombreEst">Titulo</label>
             <input
-              id="nombreExp"
+              id="nombreEst"
               class="form-control"
               type="text"
-              ngModel="{{ editExperiencia?.nombreExp }}"
-              name="nombreExp"
+              ngModel="{{ editEstudios?.nombreEst }}"
+              name="nombreEst"
               placeholder="Titulo"
               required
             />
 
             <input
               type="hidden"
-              ngModel="{{ editExperiencia?.idExp }}"
-              name="idExp"
+              ngModel="{{ editEstudios?.idEst }}"
+              name="idEst"
               class="form-control"
-              id="idExp"
+              id="idEst"
               placeholder=""
             />
-            <label for="descripcionExp">Descripcion</label>
+            <label for="descripcionEst">Descripcion</label>
             <input
-              id="descripcionExp"
+              id="descripcionEst"
               class="form-control"
               type="text"
-              ngModel="{{ editExperiencia?.descripcionExp }}"
-              name="descripcionEsxp"
+              ngModel="{{ editEstudios?.descripcionEst }}"
+              name="descripcionEst"
               placeholder="Descripcion"
               required
             />
 
-            <label for="imgExp">Imagen</label>
+            <label for="imgEst">Imagen</label>
             <input
-              id="imgExp"
+              id="imgEst"
               class="form-control"
               type="text"
-              ngModel="{{ editExperiencia?.imgExp }}"
-              name="imgExp"
+              ngModel="{{ editEstudios?.imgEst }}"
+              name="imgEst"
               placeholder="Imagen (URL)"
               required
             />
@@ -199,9 +194,9 @@
 
           <div class="modal-footer">
             <button
-              (click)="onUpdateExperiencia(editForm.value)"
+              (click)="onUpdateEstudios(editForm.value)"
               class="btn btn-primary"
-              id="update-experiencia-form"
+              id="update-estudios-form"
               data-bs-dismiss="modal"
             >
               Editar
@@ -217,32 +212,28 @@
 
 <div
   class="modal fade"
-  id="deleteExperienciaModal"
+  id="deleteEstudiosModal"
   tabindex="-1"
   role="dialog"
-  aria-labelledby="deleteExperienciaModelLabel"
+  aria-labelledby="deleteEstudiosModelLabel"
   aria-hidden="true"
 >
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="deleteExperienciaModelLabel">Borrar</h5>
+        <h5 class="modal-title" id="deleteEstudiosModelLabel">Borrar</h5>
       </div>
       <div class="modal-body">
-        <p>
-          Borrar esta Experiencia?
-          {{ deleteExperiencia?.nombreExp }}?
+        <p >
+          Borrar estos estudios?
+          {{ deleteEstudios?.nombreEst }}?
         </p>
         <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            data-bs-dismiss="modal"
-          >
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
             No
           </button>
           <button
-            (click)="onDeleteExperiencia(deleteExperiencia!.idExp)"
+            (click)="onDeleteEstudios(deleteEstudios!.idEst)"
             class="btn btn-danger"
             data-bs-dismiss="modal"
           >
