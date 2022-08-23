@@ -6,12 +6,13 @@ import { HeaderComponent } from './components/header/header.component';
 import { AcercaDeMiComponent } from './components/acerca-de-mi/acerca-de-mi.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
-import { SkilsComponent } from './components/skils/skils.component';
+import { SkillsComponent } from './components/skills/skills.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { EstudiosComponent } from './components/estudios/estudios.component';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { EstudiosComponent } from './components/estudios/estudios.component';
     AcercaDeMiComponent,
     NavbarComponent,
     ExperienciaComponent,
-    SkilsComponent,
+    SkillsComponent,
     FooterComponent,
     EstudiosComponent
   ],
@@ -29,6 +30,7 @@ import { EstudiosComponent } from './components/estudios/estudios.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    NgCircleProgressModule.forRoot({}),
   ],
   providers: [],
   bootstrap: [AppComponent]
