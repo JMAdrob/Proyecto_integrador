@@ -17,15 +17,16 @@ public class Skills {
     
     private String nombreS;
     private int porcentajeS;
+    private String colorS;
 
     public Skills() {
     }
 
-    public Skills(Long idS, String nombreS, int porcentajeS) {
+    public Skills(Long idS, String nombreS, int porcentajeS, String colorS) {
         this.idS = idS;
         this.nombreS = nombreS;
         this.porcentajeS = porcentajeS;
-    }
-    
+        this.colorS = colorS;
+    }   
     
 }
